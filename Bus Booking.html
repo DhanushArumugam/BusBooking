@@ -1,0 +1,230 @@
+<! DOCTYPE html>  
+<html>  
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+        
+<title> Bus Booking Platform </title>     
+ </head>  
+<style>  
+body {  
+  width: 500px;  
+  margin: 20 auto;  
+  padding: 50px;  
+  
+    background-image: url('bus.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  
+    
+  
+}  
+div.elem-group {  
+  margin: 10px 0;  
+}  
+div.elem-group.inlined {  
+  width: 49%;  
+  display: inline-block;  
+  float: left;  
+  margin-left: 1%;  
+}  
+label {  
+  display: block;  
+  font-family: 'Nanum Gothic';  
+  padding-bottom: 8px;  
+  font-size: 1em;  
+}  
+input {  
+  border-radius: 2px;  
+  border: 2px solid #777;  
+  box-sizing: border-box;  
+  font-size: 1em;  
+  font-family: 'Nanum Gothic';  
+  width: 100%;  
+  padding: 10px;  
+}  
+select {  
+  border-radius: 2px;  
+  border: 2px solid #777;  
+  box-sizing: border-box;  
+  font-size: 1.25em;  
+  font-family: 'Nanum Gothic';  
+  width: 100%;  
+  padding: 8px;  
+}  
+textarea {  
+  border-radius: 2px;  
+  border: 2px solid #777;  
+  box-sizing: border-box;  
+  font-size: 1em;  
+  font-family: 'Nanum Gothic';  
+  width: 100%;  
+  padding: 8px;  
+}  
+div.elem-group.inlined input {  
+  width: 95%;  
+  display: inline-block;  
+}  
+h1 {  
+  position: relative;  
+  padding: 0;  
+  margin: 0;  
+  font-family: "Raleway", sans-serif;  
+  font-weight: 300;  
+  font-size: 40px;  
+  color: #080808;  
+  -webkit-transition: all 0.4s ease 0s;  
+  -o-transition: all 0.4s ease 0s;  
+  transition: all 0.4s ease 0s;  
+  text-align: center;  
+}  
+textarea {  
+  height: 250px;  
+}  
+h2 {  
+ font-style: italic;  
+font-family: "Playfair Display","Bookman",serif;  
+ color: #999;   
+letter-spacing: -0.005em;   
+word-spacing: 1px;  
+font-size: 1.75em;  
+font-weight: bold;  
+  }  
+hr {  
+  border: 1px dotted #ccc;  
+}  
+.frame {
+  position: relative;
+  height: $card-height - 100;
+  width: $card-width - 100;
+  background: linear-gradient(to bottom, darken($frame, 40%) 0%, $frame 100%);
+  border-radius: 100%;
+  box-shadow: inset 0 0 20px $shadow-dark, 0 0 0 8px $card, 0 0 0 10px $frame;
+  overflow: hidden;
+
+  .cloud {
+    @include cloud-template();
+
+    &_top {
+      @include cloud-position(40px, -40px);
+    }
+
+    &_bottom {
+      @include cloud-position(80px, -40px);
+    }
+
+    &_slow {
+      @include cloud-animate(60s, 2s);
+    }
+
+    &_fast {
+      @include cloud-animate(30s, 0s);
+    }
+  }
+ .moon {
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    width: $moon-width;
+    height: $moon-height;
+    border-radius: 100%;
+    background-color: $moon;
+    box-shadow: 0 0 10px 4px $shadow-moon;
+    background-image: radial-gradient(
+        circle at 40% 80%,
+        #ddc997 10%,
+        transparent 0
+      ),
+      radial-gradient(circle at 55% 70%, #ddc997 5%, transparent 0),
+      radial-gradient(circle at 58% 85%, #ddc997 6%, transparent 0),
+      radial-gradient(circle at 80% 40%, #ddc997 12%, transparent 0),
+      radial-gradient(circle at 87% 58%, #ddc997 4%, transparent 0);
+  }
+
+button {  
+  height: 50px;  
+  background: orange;  
+  border: none;  
+  color: white;  
+  font-size: 1.25em;  
+  font-family: 'Nanum Gothic';  
+  border-radius: 4px;  
+  cursor: pointer;  
+}  
+button:hover {  
+  border: 2px solid black;  
+}  
+</style>  
+<body>  
+
+ <h2> Bus Booking Application </h2>   
+<form action="#" method="post">  
+  <div class="elem-group">  
+    <label for="name"> Enter Your Name </label>  
+    <input type="text" id="name" name="visitor_name" placeholder="Dhanush Kumar" pattern= [A-Z\sa-z]{3,20} required>  
+  </div>  
+  <div class="elem-group">  
+    <label for="email"> Enter Your E-mail </label>  
+    <input type="email" id="email" name="visitor_email" placeholder="Dhanush123@email.com" required>  
+  </div>  
+  <div class="elem-group">  
+    <label for="phone"> Enter Your Phone Number </label>  
+    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>  
+  </div>  
+  <hr>  
+  <div class="elem-group inlined">  
+    <label for="Gender"> Gender </label>  
+    <input type="radio" value="male" name="gender" required>male 
+    <input type="radio" value="female" name="gender" required>female  
+  </div>  
+   <hr>
+  <div class="elem-group inlined">  
+    <label for="booking-date"> Booking Date </label>  
+    <input type="date" id="booking-date" name="booking" required>  
+  </div>  
+    <hr>
+  <div class="elem-group">  
+    <label for="seat-selection"> Select Seat Preference </label>  
+    <select id="seat-selection-selection" name="Seat_preference" required>  
+        <option value=""> Choose a Seat from the List </option>  
+        <option value="Sitting"> Sitting </option>  
+        <option value="Semi-sleeper"> Semi-sleeper </option>  
+        <option value="Sleeper"> Sleeper </option>  
+    </select>  
+  </div>
+
+  <hr>  
+  <div class="elem-group">
+     <label for="Payment"> Payment </label>
+    <input type="radio" value="UPI" name="payment" required>UPI 
+    <input type="radio" value="OnlineBanking" name="payment" required>OnlineBanking 
+  </div>
+  <hr>
+  <div class="elem-group">  
+    <label for="Summary"> Summary </label>  
+
+    <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required> </textarea>  
+  </div>  
+  <button type="submit"> Book the Seats </button>  
+</form>  
+<script>  
+var currentDateTime = new Date();  
+var year = currentDateTime.getFullYear();  
+var month = (currentDateTime.getMonth() + 1);  
+var date = (currentDateTime.getDate() + 1);  
+if(date < 10) {  
+  date = '0' + date;  
+}  
+if(month < 10) {  
+  month = '0' + month;  
+}  
+var dateTomorrow = year + "-" + month + "-" + date;  
+var checkinElem = document.querySelector("#booking-date");  
+var checkoutElem = document.querySelector("#booking-date");  
+checkinElem.setAttribute("min", dateTomorrow);  
+checkinElem.onchange = function () {  
+    checkoutElem.setAttribute("min", this.value);  
+}  
+</script>  
+</body>  
+</html>  
